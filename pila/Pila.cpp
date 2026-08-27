@@ -68,6 +68,14 @@ void mostrar(Pila *p)
     cout << "NULL" << endl;
 }
 
+void liberar(Pila *p)
+{
+    while (!vacia(p))
+    {
+        pop(p);
+    }
+}
+
 int main()
 {
     Pila p;
@@ -83,5 +91,7 @@ int main()
     cout << "Se elimino: " << eliminado << endl;
     mostrar(&p);
     cout << "El nuevo tope es: " << peek(&p) << endl;
+    liberar(&p);
+
     return 0;
 }
