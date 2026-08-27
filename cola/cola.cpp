@@ -88,6 +88,14 @@ void mostrar(Cola *c)
     std::cout << "NULL" << std::endl;
 }
 
+void liberar(Cola *c)
+{
+    while (!vacia(c))
+    {
+        dequeue(c);
+    }
+}
+
 int main()
 {
     Cola c;
@@ -103,5 +111,8 @@ int main()
     std::cout << "Se elimino: " << dequeue(&c) << std::endl;
     mostrar(&c);
     std::cout << "El nuevo frente es: " << peek(&c) << std::endl;
+
+    liberar(&c);
+
     return 0;
 }
