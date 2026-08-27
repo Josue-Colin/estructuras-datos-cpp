@@ -65,6 +65,29 @@ int dequeue(Cola *c)
     return x;
 }
 
+int peek(Cola *c)
+{
+    if (vacia(c))
+    {
+        std::cout << "La cola esta vacia" << std::endl;
+        return -1;
+    }
+
+    return c->frente->dato;
+}
+
+void mostrar(Cola *c)
+{
+    std::cout << "La cola contiene: ";
+
+    for (Nodo *a = c->frente; a; a = a->sig)
+    {
+        std::cout << a->dato << " -> ";
+    }
+
+    std::cout << "NULL" << std::endl;
+}
+
 int main()
 {
     Cola c;
@@ -75,6 +98,10 @@ int main()
     enqueue(&c, 20);
     enqueue(&c, 30);
 
+    mostrar(&c);
+    std::cout << "El frente actual es: " << peek(&c) << std::endl;
     std::cout << "Se elimino: " << dequeue(&c) << std::endl;
+    mostrar(&c);
+    std::cout << "El nuevo frente es: " << peek(&c) << std::endl;
     return 0;
 }
