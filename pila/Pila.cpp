@@ -1,30 +1,49 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+using namespace std;
 
-typedef struct Nodo
+struct Nodo
 {
     int dato;
-    struct Nodo *sig;
-} Nodo;
+    Nodo *sig;
+};
 
-typedef struct
+struct Pila
 {
     Nodo *tope;
-} Pila;
+};
 
 void inicializar(Pila *p)
 {
-    p->tope = NULL;
+    p->tope = nullptr;
 }
 
-int main(void)
+void push(Pila *p, int x)
 {
+    Nodo *nuevo = new Nodo;
 
+    nuevo->dato = x;
+    nuevo->sig = p->tope;
+
+    p->tope = nuevo;
+}
+
+void pop(Pila *p)
+{
+    Nodo *a = p->tope;
+    int x = a->dato;
+    p->tope = a->sig;
+    delete (a);
+}
+
+int main()
+{
     Pila p;
 
     inicializar(&p);
 
-    printf("Pila inicializada correctamente\n");
+    push(&p, 10);
+    push(&p, 20);
+    push(&p, 30);
 
     return 0;
 }
