@@ -1,16 +1,5 @@
+#include "cola.h"
 #include <iostream>
-
-struct Nodo
-{
-    int dato;
-    Nodo *sig;
-};
-
-struct Cola
-{
-    Nodo *frente;
-    Nodo *final;
-};
 
 void inicializar(Cola *c)
 {
@@ -94,25 +83,4 @@ void liberar(Cola *c)
     {
         dequeue(c);
     }
-}
-
-int main()
-{
-    Cola c;
-
-    inicializar(&c);
-
-    enqueue(&c, 10);
-    enqueue(&c, 20);
-    enqueue(&c, 30);
-
-    mostrar(&c);
-    std::cout << "El frente actual es: " << peek(&c) << std::endl;
-    std::cout << "Se elimino: " << dequeue(&c) << std::endl;
-    mostrar(&c);
-    std::cout << "El nuevo frente es: " << peek(&c) << std::endl;
-
-    liberar(&c);
-
-    return 0;
 }
