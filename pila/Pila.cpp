@@ -1,16 +1,7 @@
+#include "Pila.h"
 #include <iostream>
+
 using namespace std;
-
-struct Nodo
-{
-    int dato;
-    Nodo *sig;
-};
-
-struct Pila
-{
-    Nodo *tope;
-};
 
 void inicializar(Pila *p)
 {
@@ -36,14 +27,17 @@ int pop(Pila *p)
 {
     if (vacia(p))
     {
-        cout << "La pila esta vacia:" << endl;
+        cout << "La pila esta vacia" << endl;
         return -1;
     }
 
     Nodo *a = p->tope;
     int x = a->dato;
+
     p->tope = a->sig;
+
     delete a;
+
     return x;
 }
 
@@ -51,7 +45,7 @@ int peek(Pila *p)
 {
     if (vacia(p))
     {
-        cout << "La pila esta vacia:" << endl;
+        cout << "La pila esta vacia" << endl;
         return -1;
     }
 
@@ -61,10 +55,12 @@ int peek(Pila *p)
 void mostrar(Pila *p)
 {
     cout << "La pila contiene: ";
+
     for (Nodo *a = p->tope; a; a = a->sig)
     {
         cout << a->dato << " -> ";
     }
+
     cout << "NULL" << endl;
 }
 
@@ -74,24 +70,4 @@ void liberar(Pila *p)
     {
         pop(p);
     }
-}
-
-int main()
-{
-    Pila p;
-
-    inicializar(&p);
-    push(&p, 10);
-    push(&p, 20);
-    push(&p, 30);
-
-    mostrar(&p);
-    cout << "El tope actual es: " << peek(&p) << endl;
-    int eliminado = pop(&p);
-    cout << "Se elimino: " << eliminado << endl;
-    mostrar(&p);
-    cout << "El nuevo tope es: " << peek(&p) << endl;
-    liberar(&p);
-
-    return 0;
 }
