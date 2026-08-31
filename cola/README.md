@@ -1,63 +1,29 @@
 # Cola en C++
 
-Implementación de una estructura de datos tipo cola utilizando nodos y memoria dinámica.
+Implementación de una cola usando nodos y memoria dinámica.
 
-## Descripción
+## Regla
 
-Una cola sigue el principio FIFO:
+FIFO: primero en entrar, primero en salir.
 
-**First In, First Out**
+## Operaciones
 
-Esto significa que el primer elemento en entrar es el primero en salir.
-
-Ejemplo:
-
-10 -> 20 -> 30
-
-El primer elemento que saldrá será 10.
-
-## Operaciones implementadas
-
-- Inicializar cola
-- Verificar si está vacía
-- Enqueue
-- Dequeue
-- Peek
-- Mostrar elementos
-- Liberar memoria
+- inicializar
+- vacia
+- enqueue
+- dequeue
+- peek
+- mostrar
+- liberar
 
 ## Complejidad
 
-| Operación   | Complejidad |
-| ----------- | ----------- |
-| Inicializar | O(1)        |
-| Vacía       | O(1)        |
-| Enqueue     | O(1)        |
-| Dequeue     | O(1)        |
-| Peek        | O(1)        |
-| Mostrar     | O(n)        |
-| Liberar     | O(n)        |
+- enqueue: O(1)
+- dequeue: O(1)
+- peek: O(1)
+- mostrar: O(n)
+- liberar: O(n)
 
-## Conceptos utilizados
+## Conceptos
 
-- Punteros
-- Estructuras
-- Memoria dinámica
-- `new` y `delete`
-- Listas enlazadas
-- FIFO
-- Recorrido de nodos
-
-## Estructura de la cola
-
-La cola utiliza dos punteros:
-
-- `frente`: apunta al primer elemento de la cola.
-- `final`: apunta al último elemento de la cola.
-
-Ejemplo:
-
-frente final
-| |
-v v
-[10] -> [20] -> [30] -> nullptr
+Punteros, nodos, new, delete, nullptr y memoria dinámica.

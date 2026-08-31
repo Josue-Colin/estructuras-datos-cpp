@@ -1,33 +1,21 @@
 # Pila en C++
 
-Implementación de una estructura de datos tipo pila utilizando nodos y memoria dinámica.
+Implementación de un **Tipo Abstracto de Datos (TAD) Pila** utilizando nodos enlazados y memoria dinámica en C++.
 
-## Operaciones
+El objetivo de este proyecto es comprender el funcionamiento interno de una pila, el manejo de punteros y la administración manual de memoria.
 
-- Inicializar pila
-- Verificar si está vacía
-- Push
-- Pop
-- Peek
-- Mostrar elementos
-- Liberar memoria
+## Concepto
 
-## Complejidad
+Una pila sigue el principio **LIFO (Last In, First Out)**:
 
-| Operación | Complejidad |
-| --------- | ----------- |
-| Push      | O(1)        |
-| Pop       | O(1)        |
-| Peek      | O(1)        |
-| Vacía     | O(1)        |
-| Mostrar   | O(n)        |
-| Liberar   | O(n)        |
+> El último elemento en entrar es el primero en salir.
 
-## Conceptos utilizados
+Ejemplo:
 
-- Punteros
-- Estructuras
-- Memoria dinámica
-- `new` y `delete`
-- Listas enlazadas
-- LIFO (Last In, First Out)
+```text
+Se insertan: 10, 20, 30
+
+tope
+ ↓
+30 -> 20 -> 10 -> nullptr
+```
